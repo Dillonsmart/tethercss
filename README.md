@@ -7,5 +7,5 @@ When did CSS get so complicated? TetherCSS is a simple, lightweight CSS framewor
 It's so easy to get started with TetherCSS. Grab a copy of `tether.css`, then include the CSS file in your HTML:
 
 ```html
-<link rel="stylesheet" href="path/to/tethercss.css">
+<link rel="stylesheet" href="path/to/tether.css">
 ```
