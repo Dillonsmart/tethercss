@@ -1,0 +1,15 @@
+/**
+Simplicity is key. TetherCSS is a CSS framework for creating responsive and modern web interfaces.
+version: 0.1.0
+Author: Dillon Smart
+License: MIT
+Link: https://github.com/dillonsmart/tethercss
+ */
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
