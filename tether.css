@@ -5,11 +5,3 @@ Author: Dillon Smart
 License: MIT
 Link: https://github.com/dillonsmart/tethercss
  */
-
-/* Reset some default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
