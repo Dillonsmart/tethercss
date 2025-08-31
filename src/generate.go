@@ -38,32 +38,40 @@ func main() {
 		return
 	}
 
-	errorStarting := startRootCSS()
-	if errorStarting != nil {
-		return
-	}
-
-	defer func() {
-		err := endRootCSS()
-		if err != nil {
-			return
-		}
-	}()
 	Generate(styles)
 	fmt.Println("CSS file generated successfully.")
 }
 
 func Generate(styles map[string]interface{}) {
+
+	errorStarting := startRootCSS()
+	if errorStarting != nil {
+		return
+	}
+
 	for styleType, styleValues := range styles {
 		if styleMap, ok := styleValues.(map[string]interface{}); ok {
 			for name, values := range styleMap {
-				createRootVariables(styleType, name, values)
+				generateRootVariables(styleType, name, values)
+			}
+		}
+	}
+
+	errorEnding := endRootCSS()
+	if errorEnding != nil {
+		return
+	}
+
+	for styleType, styleValues := range styles {
+		if styleMap, ok := styleValues.(map[string]interface{}); ok {
+			for name, values := range styleMap {
+				generateClasses(styleType, name, values)
 			}
 		}
 	}
 }
 
-func createRootVariables(styleType string, name string, style interface{}) {
+func generateRootVariables(styleType string, name string, style interface{}) {
 	var lines []string
 
 	if arr, ok := style.([]interface{}); ok {
@@ -73,6 +81,36 @@ func createRootVariables(styleType string, name string, style interface{}) {
 		}
 	} else {
 		lines = append(lines, baseIndentation+fmt.Sprintf("--%s-%s: %v;\n", styleType, name, style))
+	}
+
+	err := writeRulesToFile(lines)
+	if err != nil {
+		fmt.Println("Error writing to file:", err)
+	}
+}
+
+func generateClasses(styleType string, name string, style interface{}) {
+	switch styleType {
+	case "colors":
+		generateColorClasses("text", "color", name, style)
+	default:
+		// Handle unknown style types if necessary
+	}
+}
+
+func generateColorClasses(classPrefix string, cssProperty string, name string, style interface{}) {
+	var lines []string
+
+	var i = 100
+
+	if arr, ok := style.([]interface{}); ok {
+		for _ = range arr {
+			className := fmt.Sprintf(".%s-%s-%d {\n", classPrefix, name, i)
+			classProperty := fmt.Sprintf("  %s: var(--%s-%d);\n}\n", cssProperty, name, i)
+			lines = append(lines, className)
+			lines = append(lines, classProperty)
+			i += 100
+		}
 	}
 
 	err := writeRulesToFile(lines)
