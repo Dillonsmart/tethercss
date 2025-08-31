@@ -1,7 +1,68 @@
-/**
-Simplicity is key. TetherCSS is a CSS framework for creating responsive and modern web interfaces.
-version: 0.1.0
-Author: Dillon Smart
-License: MIT
-Link: https://github.com/dillonsmart/tethercss
- */
+:root {
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+  --blue-100: #dbeafe;
+  --blue-200: #bfdbfe;
+  --blue-300: #93c5fd;
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --blue-800: #1e40af;
+  --blue-900: #1e3a8a;
+  --red-100: #fee2e2;
+  --red-200: #fecaca;
+  --red-300: #fca5a5;
+  --red-400: #f87171;
+  --red-500: #ef4444;
+  --red-600: #dc2626;
+  --red-700: #b91c1c;
+  --red-800: #991b1b;
+  --red-900: #7f1d1d;
+  --green-100: #d1fae5;
+  --green-200: #a7f3d0;
+  --green-300: #6ee7b7;
+  --green-400: #34d399;
+  --green-500: #10b981;
+  --green-600: #059669;
+  --green-700: #047857;
+  --green-800: #065f46;
+  --green-900: #064e3b;
+  --yellow-100: #fef3c7;
+  --yellow-200: #fde68a;
+  --yellow-300: #fcd34d;
+  --yellow-400: #fbbf24;
+  --yellow-500: #f59e0b;
+  --yellow-600: #d97706;
+  --yellow-700: #b45309;
+  --yellow-800: #92400e;
+  --yellow-900: #78350f;
+  --white-100: #ffffff;
+  --black-100: #000000;
+  --gray-100: #f8f9fa;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+  --fontSize-2xl: 1.5rem;
+  --fontSize-5xl: 3rem;
+  --fontSize-xs: 0.75rem;
+  --fontSize-sm: 0.875rem;
+  --fontSize-base: 1rem;
+  --fontSize-3xl: 1.875rem;
+  --fontSize-4xl: 2.25rem;
+  --fontSize-6xl: 3.75rem;
+  --fontSize-lg: 1.125rem;
+  --fontSize-xl: 1.25rem;
+}
